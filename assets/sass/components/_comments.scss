@@ -1,0 +1,206 @@
+.comments {
+  &__head {
+    @include flexAlignCenter;
+    justify-content: flex-end;
+    margin-bottom: 4.2rem;
+    gap: 3.2rem;
+  }
+
+  &__comments {
+    overflow-y: auto;
+
+    max-height: 94.6rem;
+    /*This cause the division content
+        to be displayed from right to left */
+    direction: rtl;
+    &--cont {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4.8rem;
+      @include respond(phone) {
+        gap: 32px;
+      }
+      direction: ltr;
+    }
+    /* Designing for scroll-bar */
+    &::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+      background: $color-primary-light-2;
+      border-radius: 5px;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: $color-primary;
+      border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-primary-light-2;
+    }
+  }
+
+  // &__cont {
+  // }
+
+  &__comment {
+    max-width: 114.6rem;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 3.2rem;
+    padding-bottom: 1.6rem;
+    @include respond(phone) {
+      gap: 16px;
+      padding-bottom: 16px;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-primary;
+    }
+    // &--left {
+    // }
+    &.reply {
+      max-width: 105rem;
+      border-bottom: none;
+    }
+    &.replied {
+      border-bottom: none;
+      padding-bottom: 3.2rem;
+    }
+    &--replied {
+      max-width: 114.6rem;
+      border-bottom: 1px solid $color-primary;
+      & svg.replied {
+        transform: rotate(-90deg);
+      }
+    }
+
+    &--header {
+      @include flexBetween;
+    }
+
+    &--like {
+      @include flexAlignCenter;
+      gap: 1.8rem;
+    }
+
+    &--text {
+      color: $color-grey;
+      text-align: right;
+      max-width: 105rem;
+    }
+
+    &--reply {
+      @include flexAlignCenter;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-right: 5rem;
+      @include respond(phone) {
+        margin: 24px 3rem 0 0 !important;
+      }
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      & svg {
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover {
+        color: $color-secondary-light;
+        svg {
+          transform: translate(-3px, 5px) rotate(-90deg);
+        }
+      }
+    }
+    &.replied {
+      .comments__comment--reply {
+        &:hover svg {
+          transform: translate(0, 5px) rotate(-90deg);
+        }
+      }
+    }
+
+    &--p {
+      font-weight: 500;
+    }
+    &--author {
+      font-weight: 600;
+      color: $color-grey;
+    }
+
+    &--profile {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  &__write {
+    padding-top: 4rem;
+    border-top: 1px solid $color-primary;
+    max-width: 114.6rem;
+    margin-left: auto;
+    @include flexAlignCenter;
+    justify-content: flex-end;
+    gap: 2.2rem;
+
+    &--line {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 0%;
+      max-width: 33.3rem;
+      border-bottom: 1px solid $color-secondary;
+      transition: all 0.5s ease;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid $color-grey;
+    &--box {
+      position: relative;
+      width: 100%;
+      max-width: 33.3rem;
+    }
+    &:focus + span {
+      width: 100%;
+    }
+  }
+
+  &__profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    @include flexCenter;
+    background: #c4c4c4;
+    flex: 0 0 60px;
+    & svg {
+      width: 24px;
+      height: 24px;
+      & path {
+        fill: $color-secondary;
+      }
+    }
+  }
+}
+
+.like-icon {
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  z-index: 9;
+  &:hover {
+    transform: translate(-4px, -4px) rotate(-10deg);
+  }
+
+  &:active {
+    transition: all 0.1s ease-in-out;
+    transform: translate(-6px, -7px) rotate(-15deg);
+  }
+}

@@ -1,0 +1,40 @@
+.footer {
+  padding: 9rem 0;
+  @include respond(phone) {
+    padding: 32px 0;
+  }
+  background-color: $color-primary-light-3;
+  .container {
+    @include flexBetween;
+    gap: 2rem;
+    @include respond(phone) {
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+      row-gap: 24px;
+    }
+    .socials {
+      @include respond(phone) {
+        grid-column: 1/-1;
+        justify-self: center;
+      }
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    @include flexBetween;
+    width: 100%;
+    max-width: 34rem;
+    gap: 1rem;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s;
+    &:hover {
+      color: $color-secondary-light;
+    }
+  }
+}

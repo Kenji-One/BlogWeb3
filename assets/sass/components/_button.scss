@@ -1,0 +1,149 @@
+.btn {
+  &,
+  &:link,
+  &:visited {
+    // font-family: $font-secondary;
+    font-weight: 500;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    @include respond(phone) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+    font-family: inherit;
+    text-decoration: none;
+    padding: 1.2rem 2.4rem;
+    display: inline-block;
+    transition: all 0.3s;
+    position: relative;
+    color: $color-secondary;
+    background-color: $color-white;
+  }
+  &.white > svg path {
+    fill: $color-white;
+  }
+
+  &__flex {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+  &__big {
+    &,
+    &:link,
+    &:visited {
+      padding: 1.2rem 3.2rem;
+    }
+    &--top {
+      &,
+      &:link,
+      &:visited {
+        padding: 1.6rem 3.2rem;
+      }
+    }
+
+    &--small {
+      &,
+      &:link,
+      &:visited {
+        padding: 8px 3.2rem;
+      }
+    }
+  }
+  &__middle {
+    &,
+    &:link,
+    &:visited {
+      padding: 1.6rem 2.4rem;
+    }
+  }
+  &__small {
+    &,
+    &:link,
+    &:visited {
+      padding: 8px 1.6rem;
+      font-weight: 400;
+      font-size: 1.4rem;
+      line-height: 1.8rem;
+    }
+  }
+
+  &__bg-green {
+    &,
+    &:link,
+    &:visited {
+      background-color: $color-primary;
+    }
+  }
+
+  &__bottom-border {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0 13px 8px 13px;
+    border-bottom: 1px solid $color-primary;
+  }
+
+  & {
+    //Change for the <button> element
+    border: none;
+    // background: none;
+    cursor: pointer;
+  }
+  &__radius {
+    &,
+    &:link,
+    &:visited {
+      border-radius: 8px;
+    }
+  }
+
+  &__blue {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid $color-blue;
+    }
+  }
+
+  &__yellow {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid $color-yellow;
+    }
+  }
+  &__green {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid $color-primary;
+    }
+  }
+  &__grey {
+    &,
+    &:link,
+    &:visited {
+      border: 1px solid $color-grey-light;
+      color: $color-grey-light;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-1px) scale(1.03);
+    /*          X  Y   blur        color*/
+    box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+
+    // &::after {
+    //   transform: scaleX(1.4) scaleY(1.6);
+    //   opacity: 0;
+    // }
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+    transform: translateY(-1px) scale(0.99);
+    // box-shadow: 0 0.5rem 1rem rgba($color-black, 0.2);
+  }
+}

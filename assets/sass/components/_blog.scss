@@ -1,0 +1,90 @@
+.blog {
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .heading-secondary {
+      line-height: 3.2rem;
+      @include respond(phone) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &__blogs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(45rem, 1fr));
+    justify-items: center;
+    column-gap: 4.4rem;
+    row-gap: 8rem;
+    @include respond(phone) {
+      grid-template-columns: 1fr;
+      row-gap: 32px;
+    }
+
+    @include respond(phone-small) {
+      row-gap: 24px;
+    }
+  }
+
+  &__blog {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .heading-secondary {
+      max-width: 45rem;
+    }
+    & > * {
+      text-align: right;
+      cursor: pointer;
+    }
+    &:hover {
+      & img {
+        transform: scale(1.07);
+      }
+
+      .heading-secondary {
+        color: $color-secondary-light;
+      }
+    }
+  }
+
+  &__img-box {
+    overflow: hidden;
+    display: flex;
+    & img {
+      transition: all 0.3s ease;
+    }
+  }
+
+  &__navigation {
+    @include flexAlignCenter;
+    gap: 3.2rem;
+  }
+
+  &__arrows {
+    @include flexAlignCenter;
+    gap: 1.4rem;
+  }
+
+  &__arrow {
+    cursor: pointer;
+    transition: all 0.4s;
+    &--left {
+      transform: rotate(180deg);
+      & path {
+        fill: $color-primary;
+      }
+      &:hover {
+        transform: rotate(180deg) translateX(3px);
+      }
+    }
+
+    &--right {
+      &:hover {
+        transform: translateX(3px);
+      }
+    }
+  }
+}

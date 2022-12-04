@@ -1,0 +1,137 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  // overflow: hidden;
+  @include respond(phone) {
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+
+  &__loggedIn {
+    position: relative;
+    @include flexAlignCenter;
+    gap: 3.2rem;
+  }
+
+  &__user {
+    width: 48px;
+    height: 48px;
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+  }
+  &__notification,
+  &__drafts {
+    background: none;
+    border: none;
+    display: flex;
+    cursor: pointer;
+  }
+
+  &__notification {
+    & svg {
+      transform-origin: 50% 50%;
+      transition: all 0.3s;
+      &:hover {
+        animation: ringBell 2s infinite;
+      }
+    }
+  }
+
+  &__drafts {
+    position: relative;
+    &::after {
+      content: "المسودات";
+      position: absolute;
+      bottom: -25px;
+      right: -77px;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 19px;
+      text-align: right;
+      color: #767676;
+      border: 0.5px solid rgba(42, 51, 86, 0.9);
+      padding: 1px 8px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.6s ease;
+    }
+
+    svg {
+      transition: all 0.4s;
+    }
+
+    &:hover {
+      &::after {
+        opacity: 1;
+        visibility: visible;
+      }
+      svg {
+        transform: scale(1.03);
+      }
+    }
+  }
+
+  &__search-box {
+    width: 100%;
+    max-width: 29rem;
+    @include respond(phone) {
+      height: 30px;
+    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    @include respond(phone) {
+      order: 3;
+      margin-left: auto;
+    }
+
+    gap: 1rem;
+    &--line {
+      position: absolute;
+      left: 0;
+      bottom: -1rem;
+      @include respond(phone) {
+        bottom: 0;
+      }
+      width: 100%;
+      border-bottom: 1px solid $color-grey-light-3;
+
+      &.focus {
+        z-index: 9;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        transition: all 0.5s;
+      }
+    }
+    svg path {
+      transition: all 0.5s;
+    }
+  }
+  &__search {
+    width: 100%;
+    max-width: 23.3rem;
+    &:focus + span {
+      border-color: $color-secondary;
+      width: 100%;
+      & + svg path {
+        fill: $color-secondary;
+      }
+    }
+  }
+
+  &__logo {
+    @include respond(phone) {
+      width: 94px;
+      height: 34px;
+    }
+  }
+
+  &__logo-link {
+    display: flex;
+    text-decoration: none;
+  }
+}

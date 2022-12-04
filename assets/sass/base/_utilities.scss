@@ -1,0 +1,121 @@
+.container {
+  max-width: 144rem;
+  margin: 0 auto;
+  @include respond(small-desktop) {
+    max-width: 100%;
+    margin: 0 3.2rem;
+  }
+  @include respond(phone) {
+    margin: 0 2rem;
+  }
+}
+
+.layout-two-side {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  // align-items: start;
+  gap: 3.2rem;
+  @include respond(tablet) {
+    grid-template-columns: 1fr;
+  }
+
+  @include respond(phone) {
+    gap: 24px;
+  }
+}
+
+// .responsive {
+//   margin: 0 5.2rem;
+// }
+.mobile-hidden {
+  @include respond(phone) {
+    display: none !important;
+  }
+}
+
+.mobile-show {
+  display: none !important;
+  @include respond(phone) {
+    display: inline-block !important;
+  }
+}
+
+.u-center-text {
+  text-align: center !important;
+}
+
+.u-right-text {
+  text-align: right !important;
+}
+
+.u-center-grid {
+  grid-column: span 3 !important;
+  @include respond(tab-port) {
+    grid-column: span 1 !important;
+  }
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 2.4rem !important;
+  @include respond(phone) {
+    margin-bottom: 16px !important;
+  }
+}
+
+.u-margin-bottom-smallest {
+  margin-bottom: 8px !important;
+}
+
+.u-margin-bottom-smallest-2 {
+  margin-bottom: 1.6rem !important;
+  @include respond(phone) {
+    margin-bottom: 16px !important;
+  }
+}
+
+.u-margin-bottom-smallest-3 {
+  margin-bottom: 1.4rem !important;
+}
+
+.u-margin-bottom-smallest-4 {
+  margin-bottom: 1.2rem !important;
+}
+
+.u-margin-bottom-medium-1 {
+  margin-bottom: 3.2rem !important;
+}
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem !important;
+  @include respond(tab-port) {
+    margin-bottom: 3rem !important;
+  }
+}
+
+.u-margin-bottom-big {
+  margin-bottom: 5.2rem !important;
+  @include respond(tab-port) {
+    margin-bottom: 3.2rem !important;
+  }
+}
+
+.u-margin-bottom-biggest {
+  margin-bottom: 6rem !important;
+  @include respond(phone) {
+    margin-bottom: 32px !important;
+  }
+}
+.u-margin-bottom-biggest-2 {
+  margin-bottom: 6.2rem !important;
+  @include respond(phone) {
+    margin-bottom: 32px !important;
+  }
+}
+
+.u-margin-top-big {
+  margin-top: 4.2rem !important;
+}
+
+.u-margin-left-auto {
+  margin-left: auto;
+}

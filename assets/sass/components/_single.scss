@@ -1,0 +1,100 @@
+.single {
+  &__head {
+    @include flexAlignCenter;
+    gap: 1.6rem;
+    align-self: flex-start;
+  }
+
+  &__headings {
+    display: flex;
+    justify-content: space-between;
+    .heading-primary--main {
+      max-width: 61.8rem;
+      @include respond(tab-port) {
+        grid-area: 2 / 1 / 3 / -1;
+      }
+    }
+    .p-with-dot {
+      align-self: flex-end;
+      display: block !important;
+      @include respond(phone) {
+        margin: auto;
+      }
+      // @include respond(phone-small) {
+      //   grid-column: 1 / -1;
+      // }
+    }
+
+    @include respond(tab-port) {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+
+      justify-items: center;
+      align-items: center;
+      align-content: center;
+      gap: 3.2rem;
+    }
+
+    @include respond(phone-small) {
+      // grid-template-columns: repeat(2, auto);
+      column-gap: 16px;
+      row-gap: 24px;
+    }
+  }
+
+  &__text {
+    max-width: 118rem;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5.6rem;
+    @include respond(phone) {
+      gap: 32px;
+    }
+    & > * {
+      text-align: right;
+    }
+
+    .heading-secondary {
+      @include respond(phone) {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  &__img {
+    max-width: 83.3rem;
+    width: 100%;
+    height: auto;
+  }
+
+  &__icons {
+    position: absolute;
+    left: 0;
+    top: 396px;
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    @include respond(phone) {
+      position: unset;
+      grid-area: 1 / 1 / 1 / -1;
+      &.mobile-show {
+        display: flex !important;
+        flex-direction: row;
+        gap: 16px;
+      }
+    }
+
+    & svg {
+      cursor: pointer;
+      transition: all 0.4s;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__p {
+    color: $color-grey;
+  }
+}

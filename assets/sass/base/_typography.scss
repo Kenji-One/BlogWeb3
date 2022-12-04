@@ -1,0 +1,159 @@
+body {
+  font-family: $font-primary;
+
+  color: $color-secondary;
+  font-size: 1.8rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 2.4rem;
+  @include respond(phone) {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+  }
+}
+
+.heading-primary {
+  color: transparent;
+  font-style: normal;
+  backface-visibility: hidden;
+  // margin-bottom: 6rem;
+
+  &--main {
+    font-family: $font-primary;
+    display: block;
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 7.6rem;
+    @include respond(phone) {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    @include respond(phone-small) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+    // animation-name: moveInLeft;
+    // animation-duration: 1s;
+    // animation-timing-function: ease-out;
+    // @include respond(phone) {
+    //   letter-spacing: 1rem;
+    //   font-size: 5rem;
+    // }
+    /* animation-delay: 3s; waits before start */
+    /* animation-iteration-count: 3; how many times */
+  }
+
+  &--sub {
+    font-family: $font-primary;
+    display: block;
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 6.4rem;
+    @include respond(phone) {
+      font-weight: 400;
+      font-size: 22px;
+      line-height: 30px;
+    }
+    // color: $color-primary-light-1;
+    // animation: moveInRight 1s ease-out;
+    // @include respond(phone) {
+    //   letter-spacing: 0.5rem;
+    // }
+    &__grey {
+      color: $color-grey-light;
+    }
+
+    // &__light {
+    //   color: $color-primary-light-1;
+    // }
+  }
+}
+
+.heading-secondary {
+  font-family: $font-primary;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  @include respond(phone) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+  display: inline-block;
+  transition: all 0.2s ease;
+  &--white {
+    color: $color-white;
+  }
+
+  &--small {
+    line-height: 2.4rem;
+    font-weight: 400;
+  }
+
+  &--large {
+    font-size: 3.2rem;
+    line-height: 4.4rem;
+    @include respond(phone) {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  // text-align: center;
+  // @include respond(tab-port) {
+  //   font-size: 3rem;
+  // }
+
+  // @include respond(phone) {
+  //   font-size: 2.5rem;
+  // }
+}
+
+.heading-tertiary {
+  font-family: $font-primary;
+  font-weight: 400;
+  font-size: 2.2rem;
+  line-height: 3rem;
+  @include respond(phone) {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+// .paragraph {
+//   font-size: $default-font-size;
+// }
+
+.heading-h4 {
+  font-family: $font-primary;
+  // font-family: $font-secondary;
+  font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 2.2rem;
+  /* identical to box height */
+}
+
+.sub-heading {
+  font-family: $font-primary;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
+  &--upper {
+    text-transform: uppercase;
+  }
+}
+
+.white {
+  color: $color-white !important;
+}
+
+.input {
+  font-family: $font-primary;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.8rem;
+  &::placeholder {
+    color: $color-grey-dark;
+    text-align: right;
+  }
+}

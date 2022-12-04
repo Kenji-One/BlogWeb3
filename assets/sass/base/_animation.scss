@@ -1,0 +1,25 @@
+@keyframes LineMoveToRight {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes ringBell {
+  10% {
+    transform: rotate(30deg);
+  }
+
+  60% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0);
+  }
+}
