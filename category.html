@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="keywords"
+      content="digital, product, agency, design, uiux, frontend, backend, website, create, project, blog, web3"
+    />
+    <meta name="author" content="Kenji" />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <title>Blog - Web3</title>
+  </head>
+  <body>
+    <aside class="aside-top u-margin-bottom-small show">
+      <p class="heading-tertiary white">
+        معلومات Web3 الاحترافية من أحدث المصادر
+      </p>
+      <button class="aside-top--close" onclick="hideEl(this.parentElement)">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.59 7L12 10.59L8.41 7L7 8.41L10.59 12L7 15.59L8.41 17L12 13.41L15.59 17L17 15.59L13.41 12L17 8.41L15.59 7Z"
+            fill="white"
+          />
+        </svg>
+      </button>
+    </aside>
+    <header class="header container u-margin-bottom-biggest">
+      <div class="header__loggedIn">
+        <img
+          src="assets/imgs/profile-img.png"
+          alt="User"
+          class="header__user"
+          onclick="openUpPopUp('popup-profile')"
+        />
+        <button class="header__notification">
+          <svg
+            width="24"
+            height="26"
+            viewBox="0 0 24 26"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M12 0.75C11.5358 0.75 11.0907 0.934374 10.7625 1.26256C10.4343 1.59075 10.25 2.03587 10.25 2.5V2.675C8.27387 3.07904 6.49795 4.1531 5.22246 5.71556C3.94698 7.27803 3.25021 9.23303 3.24996 11.25V18.25L1.14121 20.574C0.12096 21.6992 0.91896 23.5 2.43621 23.5H8.96896C9.27616 24.032 9.71799 24.4738 10.25 24.781C10.7821 25.0881 11.3856 25.2498 12 25.2498C12.6143 25.2498 13.2178 25.0881 13.7499 24.781C14.2819 24.4738 14.7238 24.032 15.031 23.5H21.5637C23.081 23.5 23.879 21.6975 22.8587 20.574L20.75 18.25V11.25C20.7497 9.23303 20.0529 7.27803 18.7775 5.71556C17.502 4.1531 15.726 3.07904 13.75 2.675V2.5C13.75 2.03587 13.5656 1.59075 13.2374 1.26256C12.9092 0.934374 12.4641 0.75 12 0.75ZM5.87496 19.265L5.19246 20.014L4.41196 20.875H19.588L18.8057 20.014L18.125 19.2633V11.25C18.125 10.4457 17.9665 9.64918 17.6587 8.90606C17.3509 8.16294 16.8997 7.48773 16.331 6.91897C15.7622 6.35021 15.087 5.89905 14.3439 5.59124C13.6008 5.28343 12.8043 5.125 12 5.125C11.1956 5.125 10.3991 5.28343 9.65602 5.59124C8.9129 5.89905 8.23769 6.35021 7.66893 6.91897C7.10017 7.48773 6.64901 8.16294 6.3412 8.90606C6.03339 9.64918 5.87496 10.4457 5.87496 11.25V19.265Z"
+              fill="#2A3356"
+              fill-opacity="0.68"
+            />
+          </svg>
+        </button>
+        <div class="popup" id="popup-profile">
+          <div class="popup__container">
+            <div class="popup__content">
+              <div class="popup__profile--head u-margin-bottom-medium-1">
+                <img
+                  src="assets/imgs/profile-img.png"
+                  alt="User"
+                  class="header__user"
+                />
+                <div class="popup__profile--name-box">
+                  <p class="popup__profile--name u-margin-bottom-smallest">
+                    تشاندلر بينج
+                  </p>
+                  <p class="sub-heading popup__profile--email">
+                    Chandlerbing@gmail.com
+                  </p>
+                </div>
+              </div>
+              <button
+                class="btn btn__green btn__radius btn__small u-margin-bottom-small popup__profile--btn"
+              >
+                عرض الصفحة الشخصية
+              </button>
+              <ul class="popup__list u-margin-bottom-small">
+                <li class="popup__item">
+                  <a href="#" class="popup__link">الاشتراك</a>
+                </li>
+                <li class="popup__item">
+                  <a href="#" class="popup__link">المشاركات المفضلة</a>
+                </li>
+                <li class="popup__item">
+                  <a href="#" class="popup__link">إدارة الاشتراك</a>
+                </li>
+              </ul>
+              <div class="popup__profile--footer">
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1.21484 7.40234L4.16797 4.44922C4.24653 4.37093 4.33975 4.3089 4.4423 4.26667C4.54485 4.22445 4.65472 4.20285 4.76563 4.20312C4.98931 4.20409 5.20377 4.2924 5.36328 4.44922C5.44194 4.52761 5.50435 4.62075 5.54694 4.72331C5.58953 4.82587 5.61145 4.93583 5.61145 5.04687C5.61145 5.15792 5.58953 5.26788 5.54694 5.37044C5.50435 5.473 5.44194 5.56614 5.36328 5.64453L3.85156 7.15625L9.6875 7.15625C9.91128 7.15625 10.1259 7.24515 10.2841 7.40338C10.4424 7.56161 10.5312 7.77622 10.5312 8C10.5312 8.22378 10.4424 8.43839 10.2841 8.59662C10.1259 8.75486 9.91128 8.84375 9.6875 8.84375L3.85156 8.84375L5.36328 10.3555C5.52179 10.514 5.61084 10.729 5.61084 10.9531C5.61084 11.1773 5.52179 11.3923 5.36328 11.5508C5.20477 11.7093 4.98979 11.7983 4.76562 11.7983C4.54146 11.7983 4.32648 11.7093 4.16797 11.5508L1.21484 8.59766C1.13618 8.51927 1.07377 8.42613 1.03119 8.32357C0.9886 8.22101 0.966679 8.11105 0.966679 8C0.966679 7.88895 0.9886 7.77899 1.03119 7.67643C1.07377 7.57387 1.13618 7.48073 1.21484 7.40234ZM9.6875 2.65625H13.3438L13.3438 13.3438H9.6875C9.46372 13.3438 9.24911 13.4326 9.09088 13.5909C8.93264 13.7491 8.84375 13.9637 8.84375 14.1875C8.84375 14.4113 8.93264 14.6259 9.09088 14.7841C9.24911 14.9424 9.46372 15.0312 9.6875 15.0312H13.625C13.9974 15.0294 14.354 14.8807 14.6173 14.6173C14.8807 14.354 15.0294 13.9974 15.0312 13.625L15.0313 2.375C15.0294 2.00261 14.8807 1.646 14.6173 1.38267C14.354 1.11935 13.9974 0.970598 13.625 0.96875H9.6875C9.46372 0.96875 9.24911 1.05764 9.09088 1.21588C8.93264 1.37411 8.84375 1.58872 8.84375 1.8125C8.84375 2.03628 8.93264 2.25089 9.09088 2.40912C9.24911 2.56736 9.46372 2.65625 9.6875 2.65625Z"
+                    fill="#2A3356"
+                    fill-opacity="0.8"
+                  />
+                </svg>
+                <a href="#" class="popup__link">خروج</a>
+              </div>
+            </div>
+          </div>
+          <div
+            class="popup__background"
+            onclick="closePopUp('popup-profile')"
+          ></div>
+        </div>
+      </div>
+      <div class="header__search-box">
+        <input type="text" class="input header__search" placeholder="يبحث..." />
+        <span class="header__search-box--line focus"></span>
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M15.8131 14.5172L11.5651 10.2692C12.5859 9.04371 13.095 7.47182 12.9863 5.88054C12.8777 4.28927 12.1598 2.80113 10.9819 1.7257C9.80403 0.650269 8.25688 0.0703499 6.66231 0.106581C5.06774 0.142813 3.54853 0.792405 2.42071 1.92022C1.29289 3.04804 0.643301 4.56726 0.60707 6.16182C0.570838 7.75639 1.15076 9.30354 2.22619 10.4814C3.30162 11.6593 4.78976 12.3772 6.38103 12.4858C7.9723 12.5945 9.5442 12.0854 10.7697 11.0646L15.0177 15.3126L15.8131 14.5172ZM1.75058 6.3126C1.75058 5.31133 2.04749 4.33255 2.60377 3.50002C3.16004 2.6675 3.9507 2.01862 4.87575 1.63546C5.8008 1.25229 6.8187 1.15203 7.80073 1.34737C8.78276 1.54271 9.68481 2.02486 10.3928 2.73287C11.1008 3.44087 11.583 4.34292 11.7783 5.32495C11.9736 6.30698 11.8734 7.32488 11.4902 8.24993C11.1071 9.17498 10.4582 9.96564 9.62566 10.5219C8.79313 11.0782 7.81435 11.3751 6.81308 11.3751C5.47088 11.3736 4.18408 10.8398 3.235 9.89068C2.28592 8.9416 1.75207 7.6548 1.75058 6.3126Z"
+            fill="#767676"
+          />
+        </svg>
+
+        <span class="header__search-box--line"></span>
+      </div>
+      <a href="index.html" class="header__logo-link">
+        <img
+          src="assets/imgs/blog-logo.png"
+          alt="Website Logo"
+          class="header__logo"
+        />
+      </a>
+    </header>
+    <section class="section-category container">
+      <h2 class="heading-secondary heading-secondary--large u-center-text">
+        أحدث المقالات
+      </h2>
+      <nav class="navigation u-margin-bottom-biggest">
+        <ul class="navigation__list">
+          <li class="navigation__item mobile-hidden">
+            <button class="navigation__link">DAO</button>
+          </li>
+          <li class="navigation__item mobile-hidden">
+            <button class="navigation__link">DeFi</button>
+          </li>
+          <li class="navigation__item mobile-hidden">
+            <button class="navigation__link">عملة رقمية</button>
+          </li>
+          <li class="navigation__item mobile-hidden">
+            <button class="navigation__link">بلوكتشين</button>
+          </li>
+          <li class="navigation__item active">
+            <button class="navigation__link">NFT</button>
+          </li>
+          <li class="navigation__item mobile-show triangle">
+            <button class="navigation__link triangle">
+              <span class="down-triangle"></span>اختر فئة:
+            </button>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="blog__blogs">
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-1.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-2.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-3.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-4.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-5.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-6.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-1.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-2.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-3.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-4.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-5.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <a class="blog__blog">
+          <div class="blog__img-box u-margin-bottom-smallest-2">
+            <img
+              src="assets/imgs/blog-long-6.png"
+              alt="Blog image"
+              class="img"
+            />
+          </div>
+          <p class="p-with-dot u-margin-bottom-smallest-4">
+            1 ديسمبر<span class="dot"></span>بقلم جونز بونيتي
+          </p>
+          <h2 class="heading-secondary">
+            كشف NFT الجديد يكسر جميع قواعد عالم تبادل العملات المشفرة
+          </h2>
+        </a>
+        <button class="btn btn__bottom-border">اظهار الكل</button>
+      </div>
+    </section>
+    <section class="section-newsletter container">
+      <div class="newsletter__left">
+        <h2
+          class="heading-primary--sub u-margin-bottom-small white u-right-text"
+        >
+          اشترك في نشرتنا الإخبارية
+        </h2>
+        <h3
+          class="heading-secondary heading-secondary--small u-margin-bottom-big u-right-text"
+        >
+          اختر فئة الاشتراك هنا
+        </h3>
+        <div class="newsletter__input-box">
+          <button class="btn btn__bg-green white">الإشتراك</button>
+          <input
+            type="email"
+            name="email"
+            id="newsletterEmail"
+            class="newsletter__input input"
+            placeholder="أدخل بريدك الإلكتروني"
+          />
+          <span class="newsletter__line"></span>
+        </div>
+      </div>
+      <img
+        src="assets/imgs/section-newsletter-photo.png"
+        alt="Newsletter Photo"
+        class="newsletter__img"
+      />
+    </section>
+    <footer class="footer">
+      <div class="container">
+        <p class="footer__copyright">Copyright © WEB3</p>
+        <ul class="footer__list">
+          <li class="footer__item">
+            <a href="#" class="footer__link">البنود و الظروف</a>
+          </li>
+          <li class="footer__item">
+            <a href="#" class="footer__link">سياسة الخصوصية</a>
+          </li>
+        </ul>
+        <div class="socials socials--blue">
+          <a href="#">
+            <svg
+              width="34"
+              height="20"
+              viewBox="0 0 34 20"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M18.125 10C18.125 15.2734 14.0891 19.5625 9.125 19.5625C4.16094 19.5625 0.125 15.2734 0.125 10C0.125 4.72656 4.16094 0.4375 9.125 0.4375C14.0891 0.4375 18.125 4.72656 18.125 10ZM32.75 1C32.4516 1 32.1655 1.11853 31.9545 1.32951C31.7435 1.54048 31.625 1.82663 31.625 2.125V17.875C31.625 18.1734 31.7435 18.4595 31.9545 18.6705C32.1655 18.8815 32.4516 19 32.75 19C33.0484 19 33.3345 18.8815 33.5455 18.6705C33.7565 18.4595 33.875 18.1734 33.875 17.875V2.125C33.875 1.82663 33.7565 1.54048 33.5455 1.32951C33.3345 1.11853 33.0484 1 32.75 1ZM24.875 1C24.0734 1 22.5688 1.39375 21.4578 3.99531C20.7547 5.6125 20.375 7.75 20.375 10C20.375 12.25 20.7547 14.3875 21.4578 16.0047C22.5688 18.6062 24.0734 19 24.875 19C25.6766 19 27.1812 18.6062 28.2922 16.0047C28.9953 14.3875 29.375 12.25 29.375 10C29.375 7.75 28.9953 5.6125 28.2922 3.99531C27.1812 1.39375 25.6766 1 24.875 1Z"
+                fill="#2A3356"
+                fill-opacity="0.8"
+              />
+            </svg>
+          </a>
+          <span class="social-line social-line--blue"></span>
+          <a href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M30 15C30 6.72 23.28 0 15 0C6.72 0 0 6.72 0 15C0 22.26 5.16 28.305 12 29.7V19.5H9V15H12V11.25C12 8.355 14.355 6 17.25 6H21V10.5H18C17.175 10.5 16.5 11.175 16.5 12V15H21V19.5H16.5V29.925C24.075 29.175 30 22.785 30 15Z"
+                fill="#2A3356"
+                fill-opacity="0.8"
+              />
+            </svg>
+          </a>
+          <span class="social-line social-line--blue"></span>
+          <a href="#">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 30 30"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M27.9375 0.9375H2.0625C1.44023 0.9375 0.9375 1.44023 0.9375 2.0625V27.9375C0.9375 28.5598 1.44023 29.0625 2.0625 29.0625H27.9375C28.5598 29.0625 29.0625 28.5598 29.0625 27.9375V2.0625C29.0625 1.44023 28.5598 0.9375 27.9375 0.9375ZM9.28008 24.9035H5.10703V11.4809H9.28008V24.9035ZM7.19531 9.6457C6.71693 9.6457 6.24929 9.50385 5.85153 9.23807C5.45377 8.97229 5.14375 8.59454 4.96068 8.15257C4.77761 7.7106 4.72971 7.22427 4.82304 6.75508C4.91637 6.28589 5.14673 5.85491 5.485 5.51664C5.82327 5.17837 6.25425 4.94801 6.72344 4.85468C7.19263 4.76135 7.67896 4.80925 8.12093 4.99232C8.5629 5.17539 8.94065 5.48541 9.20643 5.88317C9.47221 6.28093 9.61406 6.74857 9.61406 7.22695C9.61055 8.56289 8.52773 9.6457 7.19531 9.6457ZM24.9035 24.9035H20.734V18.375C20.734 16.8176 20.7059 14.8172 18.5648 14.8172C16.3957 14.8172 16.0617 16.5117 16.0617 18.2625V24.9035H11.8957V11.4809H15.8965V13.316H15.9527C16.5082 12.2613 17.8688 11.1469 19.9008 11.1469C24.1266 11.1469 24.9035 13.9277 24.9035 17.5418V24.9035Z"
+                fill="#2A3356"
+                fill-opacity="0.8"
+              />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+    <div class="popup" id="popup-subscription">
+      <div class="popup__container">
+        <h1 class="heading-primary--sub">إدارة مواضيع الاشتراك</h1>
+        <div class="popup__content">
+          <div class="popup__email--box u-margin-bottom-medium">
+            <svg
+              width="30"
+              height="24"
+              viewBox="0 0 30 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M25.5 1.5H4.5C2.84315 1.5 1.5 2.84315 1.5 4.5V19.5C1.5 21.1569 2.84315 22.5 4.5 22.5H25.5C27.1569 22.5 28.5 21.1569 28.5 19.5V4.5C28.5 2.84315 27.1569 1.5 25.5 1.5Z"
+                stroke="#2A3356"
+                stroke-opacity="0.9"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M1.5 4.5L15 13.5L28.5 4.5"
+                stroke="#2A3356"
+                stroke-opacity="0.9"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <input
+              type="email"
+              name="user-email"
+              id="userEmail"
+              class="input popup__email"
+              value="chandlerbing@gmail.com"
+            />
+          </div>
+          <div class="popup__checkboxes">
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-medium-1"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              حدد الكل
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              عملة مشفرة
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              بلوكشين
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              NFT
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              DeFi
+            </label>
+          </div>
+        </div>
+        <div class="popup__buttons">
+          <button class="btn btn__grey btn__radius btn__big--small">
+            إلغاء الاشتراك
+          </button>
+          <button
+            class="btn btn__bg-green btn__radius btn__big--small white"
+            onclick="closePopUp('popup-subscription')"
+          >
+            تأكيد الاشتراك
+          </button>
+        </div>
+      </div>
+      <div
+        class="popup__background"
+        onclick="closePopUp('popup-subscription')"
+      ></div>
+    </div>
+    <div class="popup" id="popup-category">
+      <div class="popup__container">
+        <h1 class="heading-primary--sub">اختر فئة</h1>
+        <div class="popup__content">
+          <div class="popup__checkboxes">
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              عملة مشفرة
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              بلوكشين
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              NFT
+            </label>
+            <label
+              for="categoryCheckbox"
+              class="popup__checkbox--label u-margin-bottom-small"
+            >
+              <input
+                type="checkbox"
+                name="checkbox"
+                class="popup__checkbox"
+                id="categoryCheckbox"
+              />
+              DeFi
+            </label>
+            <span class="popup__line"></span>
+          </div>
+        </div>
+        <div class="popup__category">
+          <input
+            type="text"
+            class="input popup__category--input"
+            placeholder="إنشاء فئة ...."
+          />
+          <span class="popup__category--line"></span>
+        </div>
+        <div class="popup__buttons">
+          <button
+            class="btn btn__bg-green btn__radius btn__small white"
+            onclick="closePopUp('popup-category')"
+          >
+            تؤكد
+          </button>
+        </div>
+      </div>
+      <div
+        class="popup__background"
+        onclick="closePopUp('popup-category')"
+      ></div>
+    </div>
+    <div class="popup" id="popup-sign">
+      <div class="popup__container">
+        <h1 class="heading-primary--sub">أهلا بك!</h1>
+        <div class="popup__content">
+          <div class="popup__sign">
+            <img
+              src="assets/imgs/Google-icon.svg"
+              alt="Google"
+              class="popup__sign--icon"
+            />
+            <p class="popup__sign--text">تواصل مع جوجلتواصل مع جوجل</p>
+          </div>
+          <div class="popup__sign">
+            <img
+              src="assets/imgs/Facebook-icon.svg"
+              alt="Google"
+              class="popup__sign--icon"
+            />
+            <p class="popup__sign--text">تواصل مع Facebook</p>
+          </div>
+          <div class="popup__sign">
+            <img
+              src="assets/imgs/Google-icon.svg"
+              alt="Google"
+              class="popup__sign--icon"
+            />
+            <p class="popup__sign--text">تواصل مع جوجلتواصل مع جوجل</p>
+          </div>
+        </div>
+        <div class="popup__compulsory-box">
+          <div class="popup__compulsory">
+            <input type="checkbox" id="checkboxComp" checked />
+            <label for="checkboxComp">البنود و الظروف</label>
+          </div>
+          <div class="popup__compulsory">
+            <input type="checkbox" id="checkboxComp2" checked />
+            <label for="checkboxComp2">سياسة الخصوصية</label>
+          </div>
+        </div>
+      </div>
+      <div class="popup__background" onclick="closePopUp('popup-sign')"></div>
+    </div>
+    <script src="assets/js/script.js"></script>
+  </body>
+</html>
